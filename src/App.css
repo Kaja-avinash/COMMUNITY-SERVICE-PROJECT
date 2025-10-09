@@ -1,0 +1,25 @@
+/* App.css for the combined, LocalStorage-only AquaAlert app */
+
+/* Style for the Water Supply Status box to match the original requirement */
+.info-box {
+  /* Mimicking the original inline style: border: "2px solid #0077b6", borderRadius: "10px" */
+  border: 2px solid #0077b6;
+  border-radius: 10px;
+}
+
+/* Base styles for the larger, modern structure (Tailwind-like defaults) */
+body {
+  margin: 0;
+  font-family: sans-serif;
+}
+
+/* Dark mode basic toggle */
+.dark body {
+  background-color: #1f2937; /* Gray-900 */
+  color: #f9fafb; /* Gray-50 */
+}
+
+/* Apply dark mode to inputs/selects inside the dark theme */
+.dark input, .dark select, .dark textarea {
+    color: #f9fafb;
+}
