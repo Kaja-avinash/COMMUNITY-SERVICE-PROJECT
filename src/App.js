@@ -66,12 +66,14 @@ const SIMULATED_UPDATED_WEATHER_DATA = {
 
 // UPDATED YOUTUBE LINKS
 const YOUTUBE_LINKS = {
-    drip: "https://www.youtube.com/watch?v=Cx_kX2oyn6E", 
-    rwh: "https://www.youtube.com/watch?v=RjAV2Ye6R6s",
-    subsidy: "https://www.youtube.com/watch?v=0k0KfYxA9DU",
-    pmkisan_te: "https://www.youtube.com/watch?v=s-mYU4AILcw",
-    rythubharosa_te: "https://www.youtube.com/watch?v=mg0J0_dhQ1s"
+  drip: "https://youtu.be/3C9hePUekXc?si=8BeQA2ykrkb3rcsP",
+  rwh: "https://youtu.be/sHh2IG4UfPc?si=UmGDQP7QCGHG6MOM",
+  subsidy: "https://youtu.be/giHiZkGIIls?si=GEfL6llS8M0D9dP5",
+  pmkisan_te: "https://youtu.be/7fsxL4VOBhA?si=qnE7lprgbMF7hzPs",
+  rythubharosa_te: "https://youtu.be/Qb659Ia1cKs?si=2q_7TrzIfAHmN0gP",
+  pmfby: "https://youtu.be/sHh2IG4UfPc?si=UmGDQP7QCGHG6MOM"
 };
+
 
 
 
@@ -122,7 +124,7 @@ const getWeatherIcon = (condition) => {
 const translations = {
   en: {
     dashboard: "Water Status", agriculture: "Agriculture", map: "Map", weather: "Weather", admin: "Admin", title: "AquaAgri System",
-    subtitle: "Water Supply & Sustainable Farming Support", userId: "Demo User ID: Anonymous", villageInfo: "Village Information",
+    subtitle: " Water supply and Sustainable Farming Support ", userId: "Demo User ID: Anonymous", villageInfo: "Village Information",
     population: "Population", households: "Households", nearestTown: "Nearest Town", realtimeAlerts: "Real-time Alerts", waterSchedule: "Water Supply Schedule",
     status: "Status:", available: "💧 Water Available", scheduled: "⏳ Scheduled/Maintenance", noAlerts: "No active alerts at this time.",
     adminLogin: "Admin Login", enterPassword: "Enter password", login: "Login", backToUser: "Back to User Page",
@@ -622,7 +624,7 @@ export default function App() {
         </h3>
         <div className="space-y-3">
           <SchemeItem schemeText={t.schemePMKISAN} youtubeLink={YOUTUBE_LINKS.pmkisan_te} />
-          <SchemeItem schemeText={t.schemePMFBY} youtubeLink={YOUTUBE_LINKS.rwh} /> 
+          <SchemeItem schemeText={t.schemePMFBY} youtubeLink={YOUTUBE_LINKS.pmfby} />
         </div>
       </section>
   );
@@ -735,13 +737,13 @@ export default function App() {
         {/* Legend Placeholder - UPDATED FEATURES */}
         <div className="mt-4 flex flex-wrap gap-4 justify-center text-sm font-medium text-gray-800 dark:text-gray-200">
           <div className="flex items-center gap-2 hover:bg-gray-100 dark:hover:bg-gray-700 p-2 rounded-lg transition-colors"> 
-            <span className="w-4 h-4 rounded-full bg-blue-500 border border-white" /> **Water Storage Tanks**
+            <span className="w-4 h-4 rounded-full bg-blue-500 border border-white" /> Water Storage Tanks
           </div>
           <div className="flex items-center gap-2 hover:bg-gray-100 dark:hover:bg-gray-700 p-2 rounded-lg transition-colors"> 
-            <span className="w-4 h-4 rounded-full bg-yellow-500 border border-white" /> **Agri Power Supply**
+            <span className="w-4 h-4 rounded-full bg-yellow-500 border border-white" /> Agri Power Supply
           </div>
           <div className="flex items-center gap-2 hover:bg-gray-100 dark:hover:bg-gray-700 p-2 rounded-lg transition-colors"> 
-            <span className="w-4 h-4 rounded-full bg-green-500 border border-white" /> **Soil/Resource Centers**
+            <span className="w-4 h-4 rounded-full bg-green-500 border border-white" /> Soil/Resource Centers
           </div>
         </div>
     </section>
@@ -777,10 +779,10 @@ export default function App() {
                 {getWeatherIcon(weatherData.current.condition)}
               </div>
               <div className="grid grid-cols-2 gap-4 mt-4 text-sm font-medium">
-                  <p><Thermometer className="inline w-4 h-4 mr-1 text-red-500" /> Feels Like: **{weatherData.current.feelsLike}**</p>
-                  <p><Wind className="inline w-4 h-4 mr-1 text-sky-500" /> Wind: **{weatherData.current.wind}**</p>
-                  <p><Droplet className="inline w-4 h-4 mr-1 text-blue-500" /> Humidity: **{weatherData.current.humidity}**</p>
-                  <p><CloudRain className="inline w-4 h-4 mr-1 text-purple-500" /> {t.rainChance}**</p> {/* No split needed here */}
+                  <p><Thermometer className="inline w-4 h-4 mr-1 text-red-500" /> Feels Like: {weatherData.current.feelsLike}</p>
+                  <p><Wind className="inline w-4 h-4 mr-1 text-sky-500" /> Wind: {weatherData.current.wind}</p>
+                  <p><Droplet className="inline w-4 h-4 mr-1 text-blue-500" /> Humidity: {weatherData.current.humidity}</p>
+                  <p><CloudRain className="inline w-4 h-4 mr-1 text-purple-500" /> {t.rainChance}</p> {/* No split needed here */}
               </div>
           </div>
           
@@ -825,7 +827,7 @@ export default function App() {
             {language === 'te' && <Volume2 className="w-6 h-6 ml-2 cursor-pointer text-gray-400 hover:text-gray-600 dark:hover:text-gray-200" onClick={() => playAudio('telugu_agri_dashboard')} />}
           </h2>
           <p className="text-md text-gray-700 dark:text-gray-300 mb-4">
-            **{t.subtitle}**: Agriculture is the primary economic activity in Kantheru, Guntur district.
+            <b>{t.subtitle}:</b> Agriculture is the primary economic activity in Kantheru, Guntur district.
           </p>
         </section>
 
@@ -913,8 +915,8 @@ export default function App() {
             <div className="p-3 bg-white dark:bg-gray-800 rounded-lg shadow-sm hover:shadow-md transition-shadow">
               <p className="font-semibold text-lg text-green-600 dark:text-green-400 mb-2">{t.commonCrops}</p>
               <ul className="list-disc list-inside text-sm space-y-1">
-                <li>**Kharif:** {t.cropsKharif}</li>
-                <li>**Rabi:** {t.cropsRabi}</li>
+               <li><b>Kharif:</b> {t.cropsKharif}</li> 
+                <li><b>Rabi:</b> {t.cropsRabi}</li>
               </ul>
             </div>
           </div>
@@ -1044,7 +1046,10 @@ export default function App() {
           {getHeaderIcon()} 
           {t.title}
         </h1>
-        <p className="mt-2 text-sm sm:text-base">{t.subtitle}</p>
+        <p className="mt-2 text-sm sm:text-base">
+  {t.subtitle.replace(/\*/g, "")}
+</p>
+
       </header>
       
       {/* Navigation Bar (Hover effects on all buttons) */}
